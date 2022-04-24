@@ -1,0 +1,65 @@
+.titre{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 4em;
+  font-size: 40px;
+  color : white;
+}
+
+.logo{
+  grid-area: 1 / 1 / 2 / 2;
+  width: 200px;
+}
+
+.logoc{
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body{
+  background-color: blue;
+}
+
+.headConnec{
+  grid-area: 1 / 1 / 2 / 6;
+
+}
+
+.pageConnec{
+  font-size: 20px;
+  grid-area: 2 / 2 / 5 / 5;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  background-color: white;
+}
+
+
+
+.messageErreur{
+  color : red ;
+}
+
+.Connexion{
+  padding: 5px;
+  background-color: #45a1ff;
+  color: #;
+}
+
+
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+
+.foot {
+  grid-area: 4 / 1 / 6 / 6;
+
+ }

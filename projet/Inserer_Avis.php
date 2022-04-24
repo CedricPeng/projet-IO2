@@ -51,7 +51,7 @@ else{
   <body>
     <form method="POST" action="">
       <label for='avis'>Ajoutez un commentaire !</label><br><br>
-      <textarea name='avis' rows="5" cols="50" maxlength="256" placeholder="(256 caractères maximum)"><?php echo $_POST['avis'] ?></textarea><br><br>
+      <textarea name='avis' rows="5" cols="50" maxlength="256" placeholder="(256 caractères maximum)"></textarea><br><br>
       <label for='choix_note'>Mettez une note !</label><br><br>
       <input type="number" name='choix_note' min="0" max="10" placeholder="Note entre 1 et 10" value="<?php echo $_POST['choix_note']?>"/><br><br>
       <input type="submit" value="Ajouter mon avis !" name='Valider'/>

@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS robicm;
 CREATE DATABASE IF NOT EXISTS robicm;
-USE espace_pour_membres;
+USE robicm;
 DROP TABLE IF EXISTS utilisateurs;
 DROP TABLE IF EXISTS avis;
 DROP TABLE IF EXISTS images;
@@ -25,3 +25,6 @@ CREATE TABLE IF NOT EXISTS images (
   type VARCHAR(20) NOT NULL,
   bin LONGBLOB NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO utilisateurs(name, mdp, email) VALUES('admin', 'admin@admin.com', 'admin');
+	
