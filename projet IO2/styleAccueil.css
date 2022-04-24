@@ -1,0 +1,152 @@
+/*
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.head {
+    grid-area: 1 / 1 / 2 / 4;
+}
+.milieu {
+    grid-area: 2 / 1 / 5 / 4; 
+    background-color: white;
+}
+.foot {
+    grid-area: 5 / 1 / 6 / 4;
+}
+
+body{
+    background-color: rgb(95, 95, 210);
+}
+
+
+.titreA{
+    text-align: center;
+    margin-top: 33px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+    font-size: 70px;
+}
+  
+
+.Connexion{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.VisiterInvité{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: blue;
+}
+
+.lien{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    background: #FF8500;
+    padding: 8px 18px 10px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: all 250ms ease;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 40%);
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-decoration:none;  enlever le soulignement du lien 
+}
+
+*/
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+}
+    
+.logo {
+    grid-area: 1 / 1 / 2 / 3;
+    width: 200px;
+
+}
+.head { 
+    grid-area: 1 / 3 / 2 / 8;
+    font-size: 30px;
+    color: white;
+    margin-left: 150px;
+}
+.texte {
+    grid-area: 2 / 1 / 4 / 4;
+    background-color: white;
+}
+.droit { 
+    grid-area: 2 / 4 / 4 / 8;
+    background-color: white;
+
+}
+.foot { 
+    grid-area: 4/ 1 / 5 / 8;
+}
+
+body{
+    background-color: rgb(95, 95, 210);
+}
+
+.entete{
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.Connexion{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.VisiterInvité{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: blue;
+}
+
+.lien{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    background: #FF8500;
+    padding: 8px 18px 10px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: all 250ms ease;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 40%);
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-decoration:none;
+}
