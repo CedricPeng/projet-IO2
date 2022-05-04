@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS robicm;
 CREATE DATABASE IF NOT EXISTS robicm;
-USE espace_pour_membres;
+USE robicm;
 DROP TABLE IF EXISTS utilisateurs;
 DROP TABLE IF EXISTS avis;
 DROP TABLE IF EXISTS sites_avis;
