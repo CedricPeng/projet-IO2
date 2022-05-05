@@ -6,7 +6,7 @@
   else{
 
     //Connexion à la base de données
-    $connex = mysqli_connect('localhost','root','','espace_pour_membres');
+    $connex = mysqli_connect('localhost','root','','robicm');
     if(isset($_POST['Valider'])){
 
       //Si les deux sont cochés c'est contradictoire
