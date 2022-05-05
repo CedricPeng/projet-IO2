@@ -8,7 +8,9 @@ session_start();
     <title>Sites</title>
   </head>
   <body>
+    <a href="Accueil_Personnel.php"><image src="Images Sites/Icone.png" alt="Icone" style="width:100px;length:100px;"></a><br><br>
     <?php
+      include("Recherche_Site.php");
       $connex = mysqli_connect('localhost','root','','espace_pour_membres');
       $affiche = "SELECT * FROM sites_avis";
       $res1 = mysqli_query($connex, $affiche);
