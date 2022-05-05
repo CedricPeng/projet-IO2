@@ -1,6 +1,6 @@
 <?php
 session_start();
-$connex = mysqli_connect('localhost','root','','espace_pour_membres');
+$connex = mysqli_connect('localhost','root','','robicm');
 
 //Si l'url est bien correcte, on affiche le site correspondant à l'id transmit par get
 if(isset($_GET['id_s']) && !empty($_GET['id_s'])){
@@ -36,13 +36,13 @@ if(isset($_GET['id_s']) && !empty($_GET['id_s'])){
         }
       }
       else{
-        echo "Il n'y a encore aucun avis sur ce site...";
+        echo "Il n'y a encore aucun avis sur ce site..."."<br><br>";
       }
     }
 
     //Sinon on lui propose de se connecter
     else{
-      echo "Pour ajouter un avis, il faut être "."<a href="."Page_Connexion.php".">connecté</a>"." !!";
+      echo "Pour ajouter un avis, il faut être "."<a href="."Page_Connexion.php".">connecté</a>"." !!"."<br><br>";
     }
     echo "<a href="."Afficher_Sites.php".">Revenir à l'accueil</a>";
   }
@@ -53,4 +53,4 @@ if(isset($_GET['id_s']) && !empty($_GET['id_s'])){
 else{
   echo "Introuvable...";
 }
- ?>
+?>
