@@ -38,6 +38,6 @@ else{
   else{
     echo "Vous n'avez pas encore donn&eacute; d'avis..."."<br><br>";
   }
-  echo "<a href="."Accueil_Personnel.php".">Revenir &agrave; l'accueil</a>";
+  echo "<a href="."Accueil_Personnel.php".">Revenir sur mon compte; l'accueil</a>";
 }
 ?>
