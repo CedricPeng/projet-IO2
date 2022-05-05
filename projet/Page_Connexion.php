@@ -10,27 +10,39 @@ function connexion(){
     if(!empty($_POST['email']) && !empty($_POST['utilisateur']) && !empty($_POST['motdepasse'])){
 
       //Si tout est bon, on déclare les variables
+      $pseudo_admin = "admin";
+      $mdp_admin = "admin123";
+      $email_admin = "admin@gmail.com";
       $utilisateur = htmlspecialchars($_POST['utilisateur']);
       $email = htmlspecialchars($_POST['email']);
       $mdp = md5($_POST['motdepasse']);
 
-      //On cherche l'utilisateur grâce aux informations rentrées dans le formulaire
-      $chercheProfil = "SELECT * FROM utilisateurs WHERE email='$email' && mdp='$mdp' && name='$utilisateur'";
-      $res1 = mysqli_query($connex, $chercheProfil);
-
-      //Si il existe, on commence une session
-      if(mysqli_num_rows($res1) > 0){
-        $correct = mysqli_fetch_assoc($res1);
-        $_SESSION['email'] = $correct['email'];
-        $_SESSION['utilisateur'] = $correct['name'];
-        $_SESSION['mdp'] = $correct['mdp'];
-        $_SESSION['id'] = $correct['id'];
-        header('Location: Accueil_Personnel.php');
+      //On vérifie si la personne qui se connecte est un admin
+      if($_POST['email'] == $email_admin && $_POST['utilisateur'] == $pseudo_admin && $_POST['motdepasse'] == $mdp_admin){
+        $_SESSION['email'] = $email;
+        $_SESSION['utilisateur'] = $utilisateur;
+        $_SESSION['mdp'] = $mdp;
+        header('Location: Accueil_admin.php');
       }
-
-      //Si il n'existe pas
       else{
-        echo "Aïe... Il semblerait que ce compte n'existe pas...";
+        //On cherche l'utilisateur grâce aux informations rentrées dans le formulaire
+        $chercheProfil = "SELECT * FROM utilisateurs WHERE email='$email' && mdp='$mdp' && name='$utilisateur'";
+        $res1 = mysqli_query($connex, $chercheProfil);
+
+        //Si il existe, on commence une session
+        if(mysqli_num_rows($res1) > 0){
+          $correct = mysqli_fetch_assoc($res1);
+          $_SESSION['email'] = $correct['email'];
+          $_SESSION['utilisateur'] = $correct['name'];
+          $_SESSION['mdp'] = $correct['mdp'];
+          $_SESSION['id'] = $correct['id'];
+          header('Location: Afficher_Sites.php');
+        }
+
+        //Si il n'existe pas
+        else{
+          echo "Aïe... Il semblerait que ce compte n'existe pas...";
+        }
       }
     }
 
