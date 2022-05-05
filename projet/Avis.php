@@ -24,6 +24,6 @@ if(!isset($_SESSION['utilisateur'])){
         $ligne = mysqli_fetch_assoc($res1);
       }
      ?>
-     <a href="Accueil_admin.php">Revenir à l'accueil</a>
+     <a href="Accueil_admin.php">Revenir sur mon compte</a>
   </body>
 </html>
