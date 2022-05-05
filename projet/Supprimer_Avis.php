@@ -1,6 +1,6 @@
 <?php
 session_start();
-$connex = mysqli_connect('localhost','root','','espace_pour_membres');
+$connex = mysqli_connect('localhost','root','','robicm');
 if(!isset($_SESSION['utilisateur'])){
   header('Location: Page_Connexion.php');
 }
