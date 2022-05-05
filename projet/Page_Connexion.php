@@ -3,7 +3,7 @@ session_start();
 
 function connexion(){
   //Connexion à la base de données
-  $connex = mysqli_connect('pams.script.univ-paris-diderot.fr','robicm','i9T%iC2K','robicm');
+  $connex = mysqli_connect('localhost','root','','robicm');
 
   //Vérification du formulaire
   if(isset($_POST['Connexion'])){
@@ -47,17 +47,16 @@ function connexion(){
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="stylePageConnexion.css">
+    <link rel="stylesheet" href="./styleConnexion.css">
     <title>Connexion</title>
   </head>
+  
   <body>
     <div class="parent">
-      <header class='logo'>
-        <img src="Logo.png" class="logoc">
-      </header>
       <div class="headConnec">
         <p class="titre">Rebonjour</p>
       </div>
+      <div class="div2"></div>
       <div class="pageConnec">
         <form method="POST" action="">
           <p>E-mail :</p>
@@ -69,9 +68,10 @@ function connexion(){
           <p class="messageErreur"><?php echo connexion() ?></p>
           <input class="Connexion" type="submit" value="Connexion" name='Connexion' /><br><br>
         </form>
-          <p><a href="Page_Inscription.php">Je n'ai pas de compte</a></p>
+        <p><a href="Page_Inscription.php">Je n'ai pas de compte</a></p>
       </div>
-      <footer class="foot"></footer>
+      <div class="foot"></div>
+     
     </div>
   </body>
 </html>

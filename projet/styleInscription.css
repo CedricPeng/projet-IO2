@@ -1,13 +1,88 @@
-.parent {
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
+*{
+    margin: 0; padding: 0;
+    font-family: tahoma;
 }
 
-.logo { grid-area: 1 / 1 / 2 / 2; }
-.headIns { grid-area: 1 / 1 / 2 / 7; }
-.partieG { grid-area: 2 / 1 / 5 / 4; }
-.partieD { grid-area: 2 / 4 / 5 / 7; }
-.foot { grid-area: 5 / 1 / 6 / 7; }
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr) 0.5fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+
+.headIns { 
+    grid-area: 1 / 1 / 2 / 6;
+    text-align: center;
+    margin-top: 25px;
+   
+}
+
+.titre{
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    width: 4em;
+    font-size: 40px;
+    color : #777;
+}
+
+.milieu {
+    grid-area: 2 / 2 / 5 / 5;
+    line-height: 2;
+    justify-content: center;
+
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 25px;   
+    margin-top: 10px;
+    border: 2px solid #777;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+input{
+    padding-left: 3px;
+    padding-right: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 2px;
+  }
+
+.droite{
+    float: right;
+}
+
+.Connexion{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    background: #ddd;
+    padding: 8px 18px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: all 250ms ease;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 40%);
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-decoration:none;
+    float: right;
+    cursor:pointer;
+    }
+        
+
+.messageErreur{
+    color : red ;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}

@@ -2,7 +2,7 @@
 session_start();
 function inscription(){
   //Connexion à la base de données
-  $connex = mysqli_connect('pams.script.univ-paris-diderot.fr','robicm','i9T%iC2K','robicm');
+  $connex = mysqli_connect('localhost','root','','robicm');
 
   //Vérification du formulaire
   if(isset($_POST['Inscription'])){
@@ -60,35 +60,36 @@ function inscription(){
   <head>
     <meta charset="utf-8">
     <title>Inscription</title>
+    <link rel="stylesheet" href="./styleInscription.css">
   </head>
 
   <body>
     <div class="parent">
-      <header class="logo"><img src="Logo.png"> </header>
       <div class="headIns">
-        <p>Bienvenue sur la page d'inscription !</p>
+        <p class="titre">Bienvenue sur la page d'inscription !</p>
       </div>
-      <form method="POST" action="">
-        <nav class="partieG">
-        <p>Nom Utilisateur : </p>
-        <input type="text" placeholder="Nom d'utilisateur" name='utilisateur' value=""/><br><br>
-        <p>Adresse mail : </p>
-        <input type="email" placeholder="Adresse mail" name='email' autocomplete="off" value=""/><br><br>
-        <p>Confirmation adresse mail : </p>
-        <input type="email" placeholder="Confirmer l'adresse mail" name='confirme_email' autocomplete="off" value=""/><br><br>
-         </nav>
-         <nav class="partieD">
-        <p>Mot de passe : </p>
-        <input type="password" placeholder="Mot de passe" name='motdepasse' value=""/><br><br>
-        <p>Confirmation mot de passe</p>
-        <input type="password" placeholder="Confirmer le mot de passe" name='confirme_mdp' value="" /><br><br>
-        <p><?php echo inscription()?></p>
-        <input type="submit" value="Inscription" name='Inscription'/><br><br>
-      </form>
-      <p><a href="Page_Connexion.php">J'ai déjà un compte</a></p>
-       </nav>
+      <div class="milieu">
+        <form method="POST" action="">
+          <div class="droite">
+            <p>Mot de passe : </p>
+            <input type="password" placeholder="Mot de passe" name='motdepasse' value=""/>
+            <p>Confirmation mot de passe</p>
+            <input type="password" placeholder="Confirmer le mot de passe" name='confirme_mdp' value="" />
+          </div>
+          <p>Nom Utilisateur : </p>
+          <input type="text" placeholder="Nom d'utilisateur" name='utilisateur' value=""/>
+          <p>Adresse mail : </p>
+          <input type="email" placeholder="Adresse mail" name='email' autocomplete="off" value=""/>
+          <p>Confirmation adresse mail : </p>
+          <input type="email" placeholder="Confirmer l'adresse mail" name='confirme_email' autocomplete="off" value=""/>
+          
+          <p class="messageErreur"><?php echo inscription()?></p>
+          <input class="Connexion" type="submit" value="Inscription" name='Inscription'/>
+          <p><a href="Page_Connexion.php">J'ai déjà un compte</a></p>  
+        </form>
+      </div>
       <footer class="foot"> </footer>
-  </div>
+    </div>
   </body>
 
 </html>
