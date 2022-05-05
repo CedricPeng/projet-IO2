@@ -5,17 +5,18 @@ session_start();
 if(!isset($_SESSION['utilisateur'])){
   header('Location: Page_Connexion.php');
 }
-echo "Bienvenue sur votre espace personnel ".$_SESSION['utilisateur']." !"."<br><br>";
+echo "Espace personnel de ".$_SESSION['utilisateur']." :"."<br><br>";
 ?>
 
 <!DOCTYPE  html>
  <html lang="fr">
    <head>
      <meta charset="utf-8">
-     <title>Accueil</title>
+     <title>Espace Personnel</title>
    </head>
    <body>
-     <p><a href="Mon_Compte.php">Mon compte</a></p><br>
+     <p><a href="Mon_Compte.php">Mes informations personnelles</a></p>
+     <p><a href="Afficher_Sites.php">Aller à l'accueil</a></p>
      <p><a href="Deconnexion.php"><button>Déconnexion</button></a></p>
    </body>
  </html>
