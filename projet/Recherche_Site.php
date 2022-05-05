@@ -7,7 +7,7 @@
   else{
 
     //Connexion à la base de données
-    $connex = mysqli_connect('localhost','root','','espace_pour_membres');
+    $connex = mysqli_connect('localhost','root','','robicm');
 
     //Si on lance la recherche
     if(isset($_GET['Rechercher'])){
