@@ -52,7 +52,6 @@ function connexion(){
     }
   }
 }
-
 ?>
 
 <!DOCTYPE  html>
