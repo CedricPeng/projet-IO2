@@ -9,34 +9,41 @@ function inscription(){
     if(!empty($_POST['utilisateur']) && !empty($_POST['motdepasse']) && !empty($_POST['email']) && !empty($_POST['confirme_email']) && !empty($_POST['confirme_mdp'])){
       if($_POST['motdepasse'] == $_POST['confirme_mdp'] && $_POST['email'] == $_POST['confirme_email']){
 
-        //Si tout est bon, on déclare les variables
-        $utilisateur = htmlspecialchars($_POST['utilisateur']);
-        $email = htmlspecialchars($_POST['email']);
-        $mdp = md5($_POST['motdepasse']);
+        //On vérifie que l'utilisateur ne devienne pas admin
+        if($_POST['utilisateur'] != "admin"){
+        
+          //Si tout est bon, on déclare les variables
+          $utilisateur = htmlspecialchars($_POST['utilisateur']);
+          $email = htmlspecialchars($_POST['email']);
+          $mdp = md5($_POST['motdepasse']);
 
-        //On vérifie que l'utilisateur n'existe pas avec l'email
-        $emailExiste = "SELECT * FROM utilisateurs WHERE email='$email'";
-        $res1 = mysqli_query($connex, $emailExiste);
-        if(mysqli_num_rows($res1) > 0){
-          echo "Oups ! Il semblerait que cette adresse mail soit déjà utilisée...";
-        }
-
-        //Si il n'existe pas, on ajoute l'utilisateur à la base
-        else{
-          $insererUtilisateur = "INSERT INTO utilisateurs (name,mdp,email) VALUES ('$utilisateur','$mdp','$email')";
-          $res2 = mysqli_query($connex, $insererUtilisateur);
-
-          //On récupère l'utilisateur et on commence sa session
-          $recupUtilisateur = "SELECT * FROM utilisateurs WHERE email='$email' && name='$utilisateur' && mdp ='$mdp'";
-          $res3 = mysqli_query($connex, $recupUtilisateur);
-          if(mysqli_num_rows($res3) > 0){
-            $correct = mysqli_fetch_assoc($res3);
-            $_SESSION['email'] = $correct['email'];
-            $_SESSION['utilisateur'] = $correct['name'];
-            $_SESSION['mdp'] = $correct['mdp'];
-            $_SESSION['id'] = $correct['id'];
-            header('Location: Accueil_Personnel.php');
+          //On vérifie que l'utilisateur n'existe pas avec l'email
+          $emailExiste = "SELECT * FROM utilisateurs WHERE email='$email'";
+          $res1 = mysqli_query($connex, $emailExiste);
+          if(mysqli_num_rows($res1) > 0){
+            echo "Oups ! Il semblerait que cette adresse mail soit déjà utilisée...";
           }
+
+          //Si il n'existe pas, on ajoute l'utilisateur à la base
+          else{
+            $insererUtilisateur = "INSERT INTO utilisateurs (name,mdp,email) VALUES ('$utilisateur','$mdp','$email')";
+            $res2 = mysqli_query($connex, $insererUtilisateur);
+
+            //On récupère l'utilisateur et on commence sa session
+            $recupUtilisateur = "SELECT * FROM utilisateurs WHERE email='$email' && name ='$utilisateur' && mdp ='$mdp'";
+            $res3 = mysqli_query($connex, $recupUtilisateur);
+            if(mysqli_num_rows($res3) > 0){
+              $correct = mysqli_fetch_assoc($res3);
+              $_SESSION['email'] = $correct['email'];
+              $_SESSION['utilisateur'] = $correct['name'];
+              $_SESSION['mdp'] = $correct['mdp'];
+              $_SESSION['id'] = $correct['id'];
+              header('Location: Afficher_Sites.php');
+            }
+          }
+        }
+        else{
+          echo "Impossible d'utiliser ce nom d'utilisateur !";
         }
       }
 
