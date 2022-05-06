@@ -46,7 +46,7 @@ INSERT INTO utilisateurs (name, mdp, email)
       ('David', '434445', 'David@gmail.com');
 
 INSERT INTO avis (id, id_site, message, note)
-      VALUES ('1', '2', 'Très bon site, je recommande.', '8'),
+      VALUES ('8', '2', 'Très bon site, je recommande.', '8'),
       ('2', '3', 'Très bon site, je recommande.', '8'),
       ('5', '1', 'Nul.', '2'),
       ('2', '3', 'Pas mal mais peut mieux faire...', '5'),
@@ -56,7 +56,7 @@ INSERT INTO avis (id, id_site, message, note)
       ('7', '1', 'Intéressant mais des fois il y a des bugs', '6'),
       ('2', '2', 'Pas ouf', '4'),
       ('7', '2', 'Je préfère TripAdvisor', '5'),
-      ('5', '4', 'Sympa', '8'),
+      ('5', '2', 'Sympa', '8'),
       ('5', '4', 'Les avis ne sont pas fiables la plupart du temps', '3'),
       ('3', '4', 'Utile pour bien se décider', '8'),
       ('4', '4', 'On a connu mieux comme site', '5');
