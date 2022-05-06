@@ -22,6 +22,7 @@ function connexion(){
         $_SESSION['email'] = $email;
         $_SESSION['utilisateur'] = $utilisateur;
         $_SESSION['mdp'] = $mdp;
+        $_SESSION['id'] = 1;
         header('Location: Accueil_admin.php');
       }
       else{
