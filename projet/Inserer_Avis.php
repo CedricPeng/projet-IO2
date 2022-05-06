@@ -1,15 +1,13 @@
 <?php
-session_start();
 
 //Connexion à la base de données
-$connex = mysqli_connect('pams.script.univ-paris-diderot.fr','robicm','i9T%iC2K','robicm');
+$connex = mysqli_connect('localhost','root','','robicm');
 
 
   //On vérifie la validité du formulaire
   if(isset($_POST['Valider'])){
     if(!empty($_POST['avis']) && !empty($_POST['choix_note'])){
       if(isset($_GET['id_s']) && !empty($_GET['id_s'])){
-
         //Si c'est valide, on déclare les variables
         $avis = htmlspecialchars($_POST['avis']);
         $note = $_POST['choix_note'];
@@ -43,6 +41,7 @@ $connex = mysqli_connect('pams.script.univ-paris-diderot.fr','robicm','i9T%iC2K'
       echo "Vous devez mettre une note et un avis...";
     }
   }
+//}
 ?>
 
 <!DOCTYPE  html>
@@ -54,9 +53,9 @@ $connex = mysqli_connect('pams.script.univ-paris-diderot.fr','robicm','i9T%iC2K'
   <body>
     <form method="POST" action="">
       <label for='avis'>Ajoutez un commentaire !</label><br><br>
-      <textarea name='avis' rows="5" cols="50" maxlength="256" placeholder="(256 caractères maximum)"><?php echo $_POST['avis'] ?></textarea><br><br>
+      <textarea name='avis' rows="5" cols="50" maxlength="256" placeholder="(256 caractères maximum)"></textarea><br><br>
       <label for='choix_note'>Mettez une note !</label><br><br>
-      <input type="number" name='choix_note' min="0" max="10" placeholder="Note entre 1 et 10" value="<?php echo $_POST['choix_note']?>"/><br><br>
+      <input type="number" name='choix_note' min="0" max="10" placeholder="Note entre 1 et 10"/><br><br>
       <input type="submit" value="Ajouter mon avis !" name='Valider'/>
     </form>
   </body>
