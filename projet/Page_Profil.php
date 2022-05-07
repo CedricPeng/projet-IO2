@@ -1,6 +1,5 @@
 <?php
 session_start();
-include("afficher_erreurs.php");
 
 //Si l'utilisateur n'est pas connecté
 $connex = mysqli_connect('localhost','root','','robicm');
