@@ -3,6 +3,8 @@ session_start();
 $connex = mysqli_connect('localhost','root','','robicm');
 
 //Si l'url est bien correcte, on affiche le site correspondant à l'id transmit par get
+
+
 if(isset($_GET['id_s']) && !empty($_GET['id_s'])){
   $id = $_GET['id_s'];
   $site = "SELECT * FROM sites_avis WHERE id = '$id'";
@@ -11,7 +13,9 @@ if(isset($_GET['id_s']) && !empty($_GET['id_s'])){
   //On affiche la description du site
   if(mysqli_num_rows($res1) > 0){
     $ligne = mysqli_fetch_assoc($res1);
-
+  ?>
+    <image src="<?= $ligne['source']; ?> " alt="<?= $ligne['nom']; ?>" style="width:200px;length:341px;">
+  <?php
     //On affiche la note et la description
     echo $ligne['nom']." a un total de ".$ligne['note']." points !"."<br><br>";
     echo $ligne['description']."<br><br>";

@@ -1,0 +1,67 @@
+/*CSS pour Mon_Compte.php*/
+
+*{
+    margin: 0; padding: 0;
+    font-family: tahoma;
+}
+
+.Retour{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    background: #ddd;
+    padding: 8px 18px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: all 250ms ease;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 40%);
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.5fr repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+.head { grid-area: 1 / 1 / 2 / 6; }
+
+.logo{
+    width: 299px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.milieu {
+    grid-area: 2 / 2 / 4 / 5;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    margin-top: 10px;
+    border: 2px solid #777;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    line-height: 40px;
+}
+
+.milieu > p > a {
+    text-decoration: none;
+    color : #777;
+}

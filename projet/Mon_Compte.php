@@ -2,7 +2,7 @@
 session_start();
 
 //Connexion à la base de données
-$connex = mysqli_connect('pams.script.univ-paris-diderot.fr','robicm','i9T%iC2K','robicm');
+$connex = mysqli_connect('localhost','root','','robicm');
 
 //On vérfie que l'utilisateur est bien connecté, sinon on redirige vers la page de connexion
 if(!isset($_SESSION['utilisateur'])){
@@ -11,33 +11,40 @@ if(!isset($_SESSION['utilisateur'])){
 
 //L'utilisateur est connecté
 else{
-  echo "Vos informations personnelles :"."<br><br>";
-  echo "Adresse renseign&eacute;e :"." ".$_SESSION['email']."<br><br>";
-  echo "Nom d'utilisateur :"." ".$_SESSION['utilisateur']."<br><br>";
-  $moi = $_SESSION['id'];
-
-  //On cherche tous les avis
-  $chercherAvis = "SELECT * FROM avis WHERE id = '$moi' && message != ''";
-  $res1 = mysqli_query($connex, $chercherAvis);
-  $ligne = mysqli_fetch_assoc($res1);
-
-  //Si il y a des avis
-  if(mysqli_num_rows($res1) > 0){
-    echo "Voici les avis que vous avez déjà laiss&eacute; :"."<br><br>";
-    while($ligne){
-
-      //On affiche tant que la requête n'est pas NULL
-      echo $_SESSION['utilisateur']." ".$ligne['message']." ".$ligne['note']."<br><br>";
-
-      //On passe à la ligne suivante
-      $ligne = mysqli_fetch_assoc($res1);
-    }
-  }
-
-  //Si il n'y a pas d'avis
-  else{
-    echo "Vous n'avez pas encore donn&eacute; d'avis..."."<br><br>";
-  }
-  echo "<a href="."Accueil_Personnel.php".">Revenir sur mon compte</a>";
-}
+  
 ?>
+<!DOCTYPE  html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>RateMyThings</title>
+    <link rel="stylesheet" href="styleProfil.css">
+  </head>
+
+  <body>
+    <div class="parent">
+      <header class="head">
+        <a href="./Afficher_Sites.php"><img src="Images Sites/Logo.png" class="logo"></a>
+      </header>
+      <div class="milieu">    
+        <image src="Images Sites/Icone.png" alt="Icone" style="width:100px;length:100px;">
+        <p>Vos informations personnelles :<p>
+        <p>Adresse renseign&eacute;e : </p><?php echo $_SESSION['email'] ?>
+        <p>Nom d'utilisateur :</p><?php echo $_SESSION['utilisateur'] ?>
+        <br>
+        <?php  
+          if($_SESSION['utilisateur'] == "admin"){ // si c'est un admin il retourne à l'acccueil admin
+            $lien = "Accueil_admin.php";
+          }else{
+            $lien = "Afficher_Sites.php";
+          } 
+          echo '<a href="'.$lien.'" class="Retour">Retour</a>';
+        ?>
+      </div>
+ 
+    </div>
+
+  </body>
+</html>
+
+<?php } ?>

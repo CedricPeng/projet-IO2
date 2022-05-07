@@ -89,7 +89,6 @@ function inscription(){
           <input type="email" placeholder="Adresse mail" name='email' autocomplete="off" value=""/>
           <p>Confirmation adresse mail : </p>
           <input type="email" placeholder="Confirmer l'adresse mail" name='confirme_email' autocomplete="off" value=""/>
-          
           <p class="messageErreur"><?php echo inscription()?></p>
           <input class="Connexion" type="submit" value="Inscription" name='Inscription'/>
           <p><a href="Page_Connexion.php">J'ai déjà un compte</a></p>  
