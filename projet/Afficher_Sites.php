@@ -56,6 +56,7 @@ session_start();
                   <table>
                     <caption>Voici les avis que vous avez déjà laiss&eacute; :</caption>
                     <tr>
+                      <th>Nom</th>
                       <th>Avis</th>
                       <th>Note</th>
                     </tr>
@@ -63,6 +64,11 @@ session_start();
                     <?php
                       while($ligne){ //On affiche tant que la requête n'est pas NULL
                         echo '<tr>';
+                        $idSite = $ligne['id_site'];
+                        $site = "SELECT * FROM sites_avis WHERE id = '$idSite'";
+                        $res2 = mysqli_query($connex, $site);
+                        $ligne2 = mysqli_fetch_assoc($res2);
+                        echo '<td>'.$ligne2['nom'].'</td>';
                         if(strlen($ligne['message']) % 100 > 0 ){ // si le message est trop long on le coupe
                           $taille = strlen($ligne['message']);
                           $nmbRetour = $taille/100;
