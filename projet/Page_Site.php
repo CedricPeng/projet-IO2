@@ -35,7 +35,7 @@ if(isset($_GET['id_s']) && !empty($_GET['id_s'])){
           $utilisateur = "SELECT name FROM utilisateurs WHERE id = '$idCommentaire'";
           $res2 = mysqli_query($connex, $utilisateur);
           $ligne2 = mysqli_fetch_assoc($res2);
-          echo $ligne2['name']." ".$ligne['message']." ".$ligne['note']."<br><br>";
+          echo "<a href="."Page_Profil.php?id_u=".$ligne['id'].">".$ligne2['name']."</a>"." ".$ligne['message']." ".$ligne['note']."<br><br>";
           $ligne = mysqli_fetch_assoc($res1);
         }
       }
