@@ -19,7 +19,7 @@
       </div>
       <div class="milieu">
         <?php
-          $connex = mysqli_connect('localhost','root','','espace_pour_membres');
+          $connex = mysqli_connect('localhost','root','','robicm');
           $affiche = "SELECT * FROM utilisateurs";
           $res1 = mysqli_query($connex, $affiche);
           $ligne = mysqli_fetch_assoc($res1);
