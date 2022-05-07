@@ -1,11 +1,4 @@
 <?php
-
-//Si l'utilisateur est bien connecté
-  if(!isset($_SESSION['utilisateur'])){
-    header('Location: Page_Connexion.php');
-  }
-  else{
-
     //Connexion à la base de données
     $connex = mysqli_connect('localhost','root','','robicm');
 
@@ -78,7 +71,6 @@
       echo "Impossible de faire cette recherche...";
     }
   }
-}
 ?>
 
 <!DOCTYPE  html>
