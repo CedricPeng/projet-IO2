@@ -1,4 +1,5 @@
-/*CSS pour Mon_Compte.php et Accueil.php */
+/*Pour Avis.php et Supprmier.php*/
+
 
 *{
     margin: 0; padding: 0;
@@ -28,15 +29,40 @@
     cursor:pointer;
 }
 
+.Supprimer{
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    background: #ddd;
+    padding: 8px 18px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: all 250ms ease;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 40%);
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-decoration:none;
+    cursor:pointer;
+    color: red;
+}
+
 .parent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 0.5fr repeat(2, 1fr);
+    grid-template-rows: 0.25fr repeat(2, 1fr) 0.5fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
     
 .head { grid-area: 1 / 1 / 2 / 6; }
+
 
 .logo{
     width: 299px;
@@ -54,14 +80,13 @@
     padding-right: 50px;
     padding-top: 40px;
     padding-bottom: 25px;
-    margin-top: 10px;
     border: 2px solid #777;
     border-radius: 20px;
     margin-bottom: 25px;
     line-height: 40px;
 }
 
-.milieu > p > a {
-    text-decoration: none;
-    color : #777;
+.foot { 
+    grid-area: 4 / 1 / 5 / 6;
+    text-align: center;
 }

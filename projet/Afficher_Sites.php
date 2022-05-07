@@ -18,8 +18,8 @@ session_start();
           <nav class="Onglet">
             <ul>
               <li><a href="Afficher_Sites.php">Mes rates</a></li>
-              <li><a href="./pageCat.html">Catégories</a></li>
-              <li><a href="">Découvrir</a></li>
+              <li><a href="./pageCategories.php">Catégories</a></li>
+              <li><a href="pageDécouvrir.php">Découvrir</a></li>
               <li class="deroulant"><a href=""><?php echo $_SESSION['utilisateur']?> &ensp;</a>
                 <ul class="sous">
                   <?php // si c'est un admin il va sur la page admin
@@ -98,7 +98,7 @@ session_start();
           <footer class="footAccueil"> </footer>
         </div>
 
-<!--
+
     <?php
       
       include("Recherche_Site.php");
@@ -116,6 +116,6 @@ session_start();
       }
     ?>
 
-    -->
+   
   </body>
 </html>
