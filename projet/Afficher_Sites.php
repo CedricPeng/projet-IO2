@@ -7,38 +7,57 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>RateMyThings</title>
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="styleSites.css">
   </head>
 
   <body>
         <div class="parent">
           <header class="headAccueil">
-            <a href="./Afficher_Sites.php"><img src="Images Sites/Logo.png" class="logo"></a>
+          <a href="./pageCategories.php"><img src="Images Sites/Logo.png" class="logo"></a>
           </header>
           <nav class="Onglet">
-            <ul>
-              <li><a href="Afficher_Sites.php">Mes rates</a></li>
-              <li><a href="./pageCategories.php">Catégories</a></li>
-              <li><a href="pageDécouvrir.php">Découvrir</a></li>
-              <li class="deroulant"><a href=""><?php echo $_SESSION['utilisateur']?> &ensp;</a>
-                <ul class="sous">
-                  <?php // si c'est un admin il va sur la page admin
-                  if($_SESSION['utilisateur'] == "admin"){
-                    echo "<li>"."<a href="."Accueil_admin.php".">Profil</a></li>"; 
-                  }else{
-                    echo "<li>"."<a href="."Mon_Compte.php".">Profil</a></li>"; 
-                  }
-                  ?>
-                  
-                  <li><a href="#">Paramètre</a></li>
-                  <li><a href="Deconnexion.php">D&eacute;connexion</a></li> 
+                <ul>
+                <?php // si il est connecter
+                        if($_SESSION) {             
+                ?>
+                    <li><a href="Afficher_Sites.php">Mes rates</a></li>
+                <?php } ?>
+                    <li><a href="./pageCategories.php">Catégories</a></li>
+                    <li><a href="pageDécouvrir.php">Découvrir</a></li>
+                    <?php // si il est pas connecter
+                        if($_SESSION) {             
+                        ?>
+                        <li class="deroulant">
+                            <a href="">
+                                <?php echo $_SESSION['utilisateur']?> &ensp;
+                            </a>
+                            <ul class="sous">
+                                <?php // si c'est un admin il va sur la page admin
+                                if($_SESSION['utilisateur'] == "admin") {
+                                    echo "<li>"."<a href="."Accueil_admin.php".">Profil</a></li>"; 
+                                } else {
+                                    echo "<li>"."<a href="."Mon_Compte.php".">Profil</a></li>"; 
+                                }
+                                ?>
+                                <li>
+                                    <a href="Deconnexion.php">D&eacute;connexion</a>
+                                </li> 
+                            </ul>
+                        </li>
+                        <?php } else { ?>
+                                <li> 
+                                    <a href="Page_Connexion.php" >Me Connecter</a> 
+                                </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
-              </li>
-            </ul>
-          </nav>
+            </nav>
+
 
           <div class="corps">
-            <p class="mesRates"> Mes rates</p>
+            <p class="nom"> Mes rates</p>
               <?php
                 //Connexion à la base de données
                 $connex = mysqli_connect('localhost','root','','robicm');
@@ -54,7 +73,7 @@ session_start();
                   
               ?>  
                   <table>
-                    <caption>Voici les avis que vous avez déjà laiss&eacute; :</caption>
+                    <caption>Voici les avis que vous avez déjà laiss&eacute;s :</caption>
                     <tr>
                       <th>Nom</th>
                       <th>Avis</th>
@@ -69,7 +88,7 @@ session_start();
                         $res2 = mysqli_query($connex, $site);
                         $ligne2 = mysqli_fetch_assoc($res2);
                         echo '<td>'.$ligne2['nom'].'</td>';
-                        if(strlen($ligne['message']) % 100 > 0 ){ // si le message est trop long on le coupe
+                         if(strlen($ligne['message']) % 100 > 0 ){ // si le message est trop long on le coupe
                           $taille = strlen($ligne['message']);
                           $nmbRetour = $taille/100;
                           $s = substr($ligne['message'],0,100); 
@@ -79,7 +98,7 @@ session_start();
                             echo '<br>';
                             $s = substr($ligne['message'],100*($i+1),100*($i+2)); 
                           }
-                          echo '</td>';
+                          echo '</td>'; 
                         }else{ 
                           echo '<td>'.$ligne['message'].'</td>';
                         }
@@ -104,23 +123,6 @@ session_start();
           <footer class="footAccueil"> </footer>
         </div>
 
-
-    <?php
-      
-      include("Recherche_Site.php");
-      $connex = mysqli_connect('localhost','root','','espace_pour_membres');
-      $affiche = "SELECT * FROM sites_avis";
-      $res1 = mysqli_query($connex, $affiche);
-      $ligne = mysqli_fetch_assoc($res1);
-
-      //On affiche tous les sites + l'image
-      while($ligne){
-    ?>
-        <a href="Page_Site.php?id_s=<?= $ligne['id']; ?>"><image src="<?= $ligne['source']; ?> " alt="<?= $ligne['nom']; ?>" style="width:200px;length:341px;"></a>
-    <?php
-        $ligne = mysqli_fetch_assoc($res1);
-      }
-    ?>
 
    
   </body>

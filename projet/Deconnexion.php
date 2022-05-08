@@ -6,5 +6,5 @@ $_SESSION = array();
 session_destroy();
 
 //On redirige vers la page de connexion
-header('Location: Page_Connexion.php');
+header('Location: accueil.html');
 ?>

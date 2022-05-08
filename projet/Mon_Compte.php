@@ -19,6 +19,7 @@ else{
     <meta charset="utf-8">
     <title>RateMyThings</title>
     <link rel="stylesheet" href="styleProfil.css">
+
   </head>
 
   <body>

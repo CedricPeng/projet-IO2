@@ -1,0 +1,99 @@
+/*CSS pour Page_site.php et Recherche*/
+
+
+
+.nom{
+    font-size: 30px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.imgSite{
+    width: 300px;
+    margin-bottom: 25px;
+}
+
+.resultatLogo{
+    width: 150px;
+    margin: 20px;
+}
+
+.descr{
+    font-size: 26px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.avis > p {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #777;
+}
+
+.blaze{
+    text-decoration: none;
+    font-size: 18px;
+    color: #777;
+}
+
+.note{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 150px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+textarea{
+    padding-left: 10px;
+}
+
+
+
+
+table
+{
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+
+}
+
+caption{
+    line-height: 40px;
+    font-weight: bold;
+}
+
+td, th{
+    border: 1px solid black; 
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    
+}
+
+th{
+    background-color: #ddd;
+}
+.barreRecherche{
+    width: 25%;
+    transition: width 0.15s ease-in-out;
+    margin-top: 5px;
+    margin-bottom: 25px;
+
+ }
+
+.case{
+    display: flex;
+    flex-direction: column;
+
+}
+
+label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.erreur{
+    color: red;
+}

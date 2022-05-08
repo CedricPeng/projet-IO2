@@ -1,5 +1,7 @@
 <?php
 
+function insereAvis(){
+
 //Connexion à la base de données
 $connex = mysqli_connect('localhost','root','','robicm');
 
@@ -28,20 +30,20 @@ $connex = mysqli_connect('localhost','root','','robicm');
 
         //On vérifie que la requête a été exécutée
         if($res1){
-          echo "Avis ajouté avec succès !";
+          echo '<div class="toaster toaster-ok">Avis ajouté avec succès !</div>';
         }
         else{
-          echo "Oups, il semblerait qu'il y ait une erreur...";
+          echo '<div class="toaster toaster-nok">Oups, il semblerait qu\'il y ait une erreur...</div>';
         }
       }
     }
 
     //Si les champs ne sont pas remplis
     else{
-      echo "Vous devez mettre une note et un avis...";
+      echo '<div class="toaster toaster-nok">Vous devez mettre une note et un avis...</div>';
     }
   }
-//}
+}
 ?>
 
 <!DOCTYPE  html>
@@ -49,14 +51,21 @@ $connex = mysqli_connect('localhost','root','','robicm');
   <head>
     <meta charset="utf-8">
     <title>Ajouter un avis</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="site.css">
   </head>
   <body>
     <form method="POST" action="">
       <label for='avis'>Ajoutez un commentaire !</label><br><br>
-      <textarea name='avis' rows="5" cols="50" maxlength="256" placeholder="(256 caractères maximum)"></textarea><br><br>
-      <label for='choix_note'>Mettez une note !</label><br><br>
-      <input type="number" name='choix_note' min="0" max="10" placeholder="Note entre 1 et 10"/><br><br>
-      <input type="submit" value="Ajouter mon avis !" name='Valider'/>
+      <textarea name='avis' rows="5" cols="150" maxlength="256" placeholder="(256 caractères maximum)"></textarea><br><br>
+      <label for='choix_note'>Mettez une note entre 0 et 10 :</label><br><br>
+      <input class ="note" type="number" name='choix_note' min="0" max="10" placeholder="Note entre 0 et 10"/><br><br>
+      <input class="bouton" type="submit" value="Ajouter mon avis !" name='Valider'/>
+      <?php insereAvis()?>
     </form>
+
+    
+
+
   </body>
 </html>
