@@ -1,0 +1,21 @@
+Nom de la base de données : robicm
+
+Table utilisateurs :
+id
+name
+mdp
+email
+
+Table avis :
+id_avis
+id (correspond à l'id de la colonne id de la table utilisateurs)
+id_site (correspond à l'id de la colonne id de la table sites_avis)
+message
+note
+
+Table sites_avis
+id
+nom
+description
+source
+note
