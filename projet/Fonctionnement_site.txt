@@ -1,0 +1,9 @@
+Pour créer la base de données et les tables il faut utiliser le fichier create_tables.sql.
+Les tables sont déjà préremplie avec quelques éléments.
+Pour commencer la navigation sur le site il faut utiliser la page accueil.html.
+Il est possible de visiter le site en tant qu'invité, c'est à dire sans avoir de compte mais certaines fonctionnalités sont restreintes.
+Pour avoir toutes les fonctionnalités il faut soit s'inscrire via la page d'inscription soit utiliser le compte admin.
+Les identifiants du compte admin sont : email : admin@gmail.com
+                                        identifiant : admin
+                                        mot de passe : admin123
+Avec le compte admin il y a des fonctionnalités supplémentaires telles que supprimer un utilisateur ou un message.
